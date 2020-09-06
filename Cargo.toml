@@ -1,0 +1,17 @@
+[package]
+name = "ulm"
+version = "0.1.0"
+authors = ["Thibaut Pérami <thibaut.perami@ens.fr>",
+           "Mathieu Fehr <mathieu.fehr@ens.fr>",
+           "Luc Chabassier <luc.chabassier@ens.fr>"]
+edition = "2018"
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+
+[[bin]]
+name = "ulmrepl"
+path = "src/bin/repl.rs"
