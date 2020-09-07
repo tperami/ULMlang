@@ -28,9 +28,9 @@ jobs:
         command: test
         args: --verbose
     - name: Run clippy
-      uses: actions-rs/clippy@master
+      uses: actions-rs/clippy-check@v1
       with:
-        args: --all-features --all-targets 
+        token: ${{ secrets.GITHUB_TOKEN }}
     - name: Check formatting
       uses: actions-rs/cargo@v1
       with:
