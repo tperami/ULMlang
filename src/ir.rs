@@ -39,12 +39,12 @@ pub enum Value {
     Int(i32),
     Type(Type),
     Builtin {
-        captured: Vec<Box<Value>>,
+        captured: Vec<Value>,
         remaining: i32,
         body: Builtin,
     },
     Fun {
-        captured: Vec<Box<Value>>,
+        captured: Vec<Value>,
         remaining: i32,
         body: Box<TExpr>,
     },
