@@ -16,6 +16,7 @@ pub enum Type {
     Type,
     FakeLin,
     Arrow(Box<Type>, Box<Type>),
+    ArrowOnce(Box<Type>, Box<Type>),
 }
 
 #[derive(Eq, PartialEq, Debug, Clone, Copy)]
@@ -25,6 +26,7 @@ pub enum Builtin {
     Minus,
     Div,
     Arrow,
+    ArrowOnce,
     Eq,
     Neq,
     Lt,
