@@ -1,0 +1,18 @@
+#![allow(unknown_lints)]
+#![allow(clippy::all)]
+
+use std::str::FromStr;
+
+grammar;
+
+pub Numeral: i64 = {
+    <n:Numeral10> => n,
+    <n:Numeral2> => n,
+    <n:Numeral8> => n,
+    <n:Numeral16> => n,
+};
+
+Numeral10: i64 = r"[0-9]+" => i64::from_str(<>).unwrap();
+Numeral2: i64 = r"0[bB][0-1]+" => i64::from_str_radix(&<>[2..], 2).unwrap();
+Numeral8: i64 = r"0[oO][0-7]+" => i64::from_str_radix(&<>[2..], 8).unwrap();
+Numeral16: i64 = r"0[xX][0-9a-fA-F]+" => i64::from_str_radix(&<>[2..], 16).unwrap();

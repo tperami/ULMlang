@@ -1,2 +1,3 @@
+/src/parser/parser.rs
 /target
 Cargo.lock
